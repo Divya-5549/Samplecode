@@ -1,0 +1,336 @@
+<apex:page controller="Flowtoapex" renderAs="pdf" >
+<html style="overflow-y: hidden;">
+<head>
+    <title></title>
+</head>
+    <body style="height: auto; min-height: auto;">&nbsp;<img alt="image(2).png" src="{!$Label.header_intake_pdf}" style="width:100%;" />
+<table style="width: 100%;  border-top: 3px solid; padding-top: 30px;">
+    <tbody>
+        <tr>
+            <td style="width: 9.1305%;"><strong>SALES REP</strong></td>
+            <td style="width: 32.7506%; border-bottom: 1px solid;  text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {!Repname}</td>
+            <td style="width: 10.8383%;"><strong>SALES PHONE</strong></td>
+            <td style="width: 41.2223%; border-bottom: 1px solid;  text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {!RepPhone}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%; border-bottom: 3px solid; padding-bottom: 30px;">
+    <tbody>
+        <tr>
+            <td style="width: 7.4988%;"><strong>INTAKE</strong></td>
+            <td style="width: 23.3683%; border-bottom: 1px solid;  text-align: center;">{!objLead.record_number__c}</td>
+            <td style="width: 11.4868%;"><strong>STORE CODE</strong></td>
+            <td style="width: 13.8349%; border-bottom: 1px solid;  text-align: center;">{!Repstorecode}</td>
+            <td style="width: 4.8726%;"><strong>TIME</strong></td>
+            <td style="width: 6.8127%; border-bottom: 1px solid;  text-align: center;">{!objLead.Schedule_Times__c}</td>
+            <td style="width: 4.6176%;"><strong>DATE</strong></td>
+            <td style="width: 16.5083%; border-bottom: 1px solid;text-align: center;">{!objLead.CreatedDate}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%; padding-top: 30px;">
+    <tbody>
+        <tr>
+            <td style="width: 10.1305%;"><strong>CUSTOMER</strong></td>
+            <td style="width: 46.6364%; border-bottom: 1px solid;text-align: center;">{!objLead.FirstName}{!objLead.LastName}</td>
+            <td style="width: 8.2617%;"><strong>CONTACT</strong></td>
+            <td style="width: 31.7453%; border-bottom: 1px solid;text-align: center;">{!objLead.Phone}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <td style="width: 8.1305%;"><strong>ADDRESS</strong></td>
+            <td style="width: 46.6364%; border-bottom: 1px solid;  text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {!objLead.Install_Street_Address__c}</td>
+            <td style="width: 7.3864%;"><strong>STATE</strong></td>
+            <td style="width: 12.7313%; border-bottom: 1px solid;  text-align: center;">{!objLead.Install_State__c}</td>
+            <td style="width: 6.2617%;"><strong>ALT NO.</strong></td>
+            <td style="width: 31.7453%; border-bottom: 1px solid;text-align: center;">{!objLead.MobilePhone}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <td style="width: 6.4194%;"><strong>CITY</strong></td>
+            <td style="width: 13.9769%; border-bottom: 1px solid;  text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{!objLead.Install_City__c}</td>
+            <td style="width: 5.4779%;"><strong>ZIP&nbsp;</strong></td>
+            <td style="width: 10.515%; border-bottom: 1px solid;  text-align: center;">&nbsp; &nbsp; &nbsp; {!objLead.Install_Zip__c}</td>
+            <td style="width: 8.4936%;"><strong>EMAIL</strong></td>
+            <td style="width: 34.9796%; border-bottom: 1px solid;  text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{!objLead.Email}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%; border-bottom: 3px solid; padding-bottom: 30px;">
+    <tbody>
+        <tr>
+            <td style="width: 9.296%;"><strong>PHONE HM</strong></td>
+            <td style="width: 12.602%; border-bottom: 1px solid;  text-align: center;">{!objLead.Phone}</td>
+            <td style="width: 4.9784%;"><strong>WRK</strong></td>
+            <td style="width: 16.1367%; border-bottom: 1px solid;  text-align: center;">&nbsp;</td>
+            <td style="width: 3.2223%;"><strong>EXT</strong></td>
+            <td style="width: 13.0008%; border-bottom: 1px solid;  text-align: center;">&nbsp;</td>
+            <td style="width: 3.6268%;"><strong>CELL</strong></td>
+            <td style="width: 23.3974%; border-bottom: 1px solid;  text-align: center;">{!objLead.Phone}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 50%; padding-top: 30px;">
+    <tbody>
+        <tr>
+            <td style="width: 35%;"><strong>INSURANCE CO. NAME</strong></td>
+            <td style="width: 65; border-bottom: 1px solid;">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <td style="width: 9.1305%;"><strong>POLICY NO</strong></td>
+            <td style="width: 32.7506%; border-bottom: 1px solid; text-align: center;">&nbsp; &nbsp; &nbsp; {!objLead.Policy_Number__c}</td>
+            <td style="width: 8.8383%;"><strong>ALT PHONE</strong></td>
+            <td style="width: 41.2223%; border-bottom: 1px solid; text-align: center;">{!objLead.MobilePhone}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <td style="width: 11.9091%;"><strong>DATE OF LOSS</strong></td>
+            <td style="width: 27.9137%; border-bottom: 1px solid; text-align: center;">{!objLead.Loss_Date__c}</td>
+            <td style="width: 17.3863%;"><strong>DISPATCH REFERRAL #</strong></td>
+            <td style="width: 31.6743%; border-bottom: 1px solid;">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%; border-bottom: 3px solid; padding-bottom: 30px;">
+    <tbody>
+        <tr>
+            <td style="width: 14    .8693%;"><strong>GLASS DEDUCTIBLES</strong></td>
+            <td style="width: 22.4687%; border-bottom: 1px solid;">&nbsp;</td>
+            <td style="width: 1.8383%;"><strong>CLAIMS</strong></td>
+            <td style="width: 41.2223%; border-bottom: 1px solid;">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+<div style="margin-bottom: 20px;"><strong style="display: inline-block;">Customer Request:</strong> &nbsp;</div>
+
+<div style="margin-bottom: 20px;"><strong style="display: inline-block; width: 150px;">Work Performed:</strong>
+
+<div style="display: inline-block; width: calc(100% - 150px);float:right">Glass Replaced&nbsp; &nbsp; &nbsp;Glass Repaired</div>
+</div>
+
+<div class="container">
+<div class="vehicle-details"><strong class="field-label">Vehicle:</strong></div>
+
+<table>
+    <tbody>
+        <tr>
+            <td style="width: 8.8383%;"><strong>MAKE</strong></td>
+            <td style="width: 40.2223%; border-bottom: 1px solid; text-align: center;">{!objLead.Make__c}</td>
+            <td style="width: 8.8383%;"><strong>MODEL</strong></td>
+            <td style="width: 40.2223%; border-bottom: 1px solid; text-align: center;">{!objLead.Model__c}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+        <tr>
+            <td style="width: 8.8383%;"><strong>VIN</strong></td>
+            <td style="width: 35.2223%; border-bottom: 1px solid; text-align: center;">{!objLead.VIN__c}</td>
+            <td style="width: 8.8383%;"><strong>YEAR</strong></td>
+            <td style="width: 35.2223%; border-bottom: 1px solid; text-align: center;">{!objLead.Year__c}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%; border-bottom: 3px solid; padding-bottom: 30px;">
+</table>
+
+<table style="width: 100%;  border-top: 3px solid; padding-top: 30px;">
+</table>
+
+<table cellpadding="0" cellspacing="0" style="width: 100%; padding-top: 0px; padding-bottom: 30px;">
+    <tbody>
+        <tr>
+            <td colspan="3" rowspan="1" style="border-right: 1px solid rgb(0, 0, 0); width: 25.8259%;"><strong>PROMISED COMPLETION DATE</strong></td>
+            <td style="width: 4.5045%;"></td>
+            <td style=" width: 4.5045%;"></td>
+            <td style="width: 10.6475%;"><strong></strong></td>
+            <td style="width: 4.5045%;"></td>
+            <td style="width: 4.5045%;"></td>
+            <td style="width: 18.2883%;">
+            <div>
+            <div></div>
+            </div>
+            </td>
+            <td>&nbsp;</td>
+            <td style="width: 6.6273%;">&nbsp;</td>
+            <td style="width: 6.4527%;">&nbsp;</td>
+            <td style="width: 12.9167%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 4.955%;"><strong>APPT. DATE</strong></td>
+            <td colspan="2" rowspan="1" style="border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); width: 19.6697%;">{!objLead.Install_Schedule_Date__c}</td>
+            <td style="width: 4.5045%;">&nbsp;</td>
+            <td colspan="3" rowspan="1" style="width: 19.5195%;"><strong>APPT. ADDRESS</strong></td>
+            <td colspan="6" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 50.7506%;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {!objLead.Install_Street_Address__c}&nbsp; &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 4.955%;"><strong>APPT. DAY</strong></td>
+            <td colspan="2" rowspan="1" style="border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); width: 19.6697%;"><strong>M TU W TH FR SA SU</strong></td>
+            <td style="width: 4.5045%;">&nbsp;</td>
+            <td colspan="3" rowspan="1" style="width: 19.5195%;"><strong>COMPLEX NAME</strong></td>
+            <td colspan="4" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 31.3813%;">{!objLead.Complex_Name__c}&nbsp;</td>
+            <td style="width: 6.4527%;"><strong>CITY</strong></td>
+            <td style="border-bottom: 1px solid rgb(0, 0, 0); width: 12.9167%;">{!objLead.Install_City__c}</td>
+        </tr>
+        <tr>
+            <td style="border-right: 1px solid rgb(0, 0, 0); width: 4.955%;"><strong>TIME</strong></td>
+            <td style="border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); width: 4.5045%;">{!objLead.Schedule_Times__c}&nbsp;</td>
+            <td style="text-align: right; border-right: 1px solid rgb(0, 0, 0); width: 15.3154%;">&nbsp;</td>
+            <td style="width: 4.5045%;">&nbsp;</td>
+            <td colspan="3" rowspan="1" style="width: 19.5195%;"><strong>SECONDARY AUTH</strong></td>
+            <td colspan="6" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 50.7506%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="border-right: 1px solid rgb(0, 0, 0); width: 4.955%;">&nbsp;</td>
+            <td style="border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); width: 4.5045%;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+            <td style="text-align: right; border-right: 1px solid rgb(0, 0, 0); width: 15.3154%;"></td>
+            <td style="width: 4.5045%;">&nbsp;</td>
+            <td colspan="3" rowspan="1" style="width: 19.5195%;"><strong>CONTACT</strong></td>
+            <td colspan="3" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 24.6245%;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{!objLead.Phone}</td>
+            <td style="width: 6.6273%;"><strong>PHONE</strong></td>
+            <td colspan="2" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 19.3487%;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;{!objLead.Phone}</td>
+        </tr>
+        <tr>
+            <td style="border-right: 1px solid rgb(0, 0, 0); width: 4.955%;">&nbsp;</td>
+            <td style="border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); width: 4.5045%;">&nbsp;</td>
+            <td style="text-align: right; border-right: 1px solid rgb(0, 0, 0); width: 15.3154%;"><strong>ALL DAY</strong></td>
+            <td style="width: 4.5045%;">&nbsp;</td>
+            <td colspan="3" rowspan="1" style="width: 19.5195%;"><strong>MAJOR CROSS STREETS</strong></td>
+            <td colspan="3" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 24.6245%;">&nbsp;</td>
+            <td style="text-align: center; width: 6.6273%;">&nbsp;</td>
+            <td colspan="2" rowspan="1" style="border-bottom: 1px solid rgb(0, 0, 0); width: 19.3487%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 4.955%;"><strong>AUTH BY:</strong></td>
+            <td colspan="2" rowspan="1" style="border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); width: 19.6697%;">&nbsp;</td>
+            <td style="width: 4.5045%;">&nbsp;</td>
+            <td colspan="9" rowspan="1" style="width: 69.8198%;">Estimated is based on a FLAT RATE FEE. There will be NO CHARGE for shop suppliers, vehicle storage or the removal and disposal of any/all hazardous, used or other waste materials</td>
+        </tr>
+    </tbody>
+</table>
+
+
+</div>
+</div>
+</body>
+</html>
+
+</apex:page>
+
+
+  apex class
+public without sharing class Flowtoapex {
+    
+    public static Id recordId { get; set; }
+    public static Lead objLead { get; set; }
+    public static String RepPhone  {get; set;}
+    public static String Repstorecode  {get; set;}
+    public static String Repname {get; set;}
+    // public static Outside_Sales_Rep__c outside {get; set;}
+    public Flowtoapex() {
+        recordId = ApexPages.currentPage().getParameters().get('recordId');
+        objLead = [SELECT Id, record_number__c,Name, Email, Outside_Sales_Rep__r.Phone__c,Outside_Sales_Rep__r.Store_Code__c,Install_City__c,Outside_Sales_Rep__r.Name, Install_Notes__c,Schedule_Times__c ,CreatedDate ,Loss_Date__c ,Install_Schedule_Date__c , Veh_Model__c,Veh_Make__c,Install_Street_Address__c, Install_Zip__c, Install_State__c, Complex_Name__c, FirstName, LastName, Named_Insured__c, Insurance_Provider_Dropdown__c, Make__c, Model__c, Language__c, Outside_Sales_Rep__c, Phone, MobilePhone, Policy_Number__c, Job_Type__c, Year__c, VIN__c, Doors__c, Body_Style__c, Company
+                   FROM Lead WHERE Id = :recordId];
+        RepPhone = objLead.Outside_Sales_Rep__r.Phone__c;
+        Repstorecode = objLead.Outside_Sales_Rep__r.Store_Code__c;
+        Repname =objLead.Outside_Sales_Rep__r.Name;
+    }
+    
+    @InvocableMethod(label='send Email With Attachment' description='Returns the list of lead names corresponding to the specified account IDs.' category='lead')
+    public static void sendEmailWithAttachment(List<Id> lstIds) {
+        system.debug('recordId'+lstIds);
+        try{
+            
+                            PageReference p = Page.Emailpage;
+
+            List<Lead> objLeads = [select id ,Name, email, Outside_Sales_Rep__r.E_Mail__c ,Outside_Rep_Email__c from lead where ID IN:lstIds];
+            if(objLeads.size() > 0 && objLeads[0].email != null){
+                p.getParameters().put('recordId', objLeads[0].Id);
+                Blob pdfBlob;
+                
+               if (!Test.isRunningTest()) {
+                    pdfBlob = p.getContentAsPDF(); 
+               } else {
+                   pdfBlob = Blob.valueOf('test');
+                }
+                
+                String fileName = 'Lead Created Succesfully ' + objLeads[0].Name + '_' + System.now().format('yyyy-MM-dd_HH-mm-ss') + '.pdf';
+                List<EmailTemplate> emailTemplates = [SELECT Id,Name , Subject, Description, HtmlValue, DeveloperName, Body FROM EmailTemplate WHERE DeveloperName = 'rep9' LIMIT 1];
+                if(emailTemplates.size() > 0){
+                    Messaging.EmailFileAttachment efa = new Messaging.EmailFileAttachment();
+                    efa.setFileName(fileName);
+                    efa.setBody(pdfBlob);
+                    Messaging.SingleEmailMessage mail = Messaging.renderStoredEmailTemplate(emailTemplates[0].Id, objLeads[0].Id,null);
+                  List<OrgWideEmailAddress> fromAddress = [SELECT Id FROM OrgWideEmailAddress where address = 'ag@gmail.com' LIMIT 1];
+                    if( objLeads[0].Outside_Sales_Rep__r.E_Mail__c!=null ){
+                        mail.setToAddresses(new List<String>{ objLeads[0].Outside_Sales_Rep__r.E_Mail__c});
+                    }
+                    if(objLeads[0].Email!= null ){
+                        mail.setToAddresses(new List<String>{ objLeads[0].Email});
+                    }
+                    if(objLeads[0].Outside_Rep_Email__c!=null ){
+                        mail.setToAddresses(new List<String>{ objLeads[0].Outside_Rep_Email__c});
+                    }
+                    mail.setSubject('Lead Created Successfully: ' + fileName);
+                    mail.setPlainTextBody('Please find the PDF attached.');
+                    mail.setUseSignature(false);
+                    mail.setBccSender(false);
+                    mail.setTemplateId(emailTemplates[0].Id);
+                    mail.setOrgWideEmailAddressId(fromAddress[0].Id); 
+                    mail.setSaveAsActivity(true);
+                    mail.setFileAttachments(new Messaging.EmailFileAttachment[] {efa});
+                    
+                    
+                    Messaging.SendEmailResult[] mailresult = Messaging.sendEmail(new List<Messaging.SingleEmailMessage>{ mail });
+                   /* for (Messaging.SendEmailResult mr : mailresult) {
+                        if (mr.isSuccess()) {
+                            //Do something for success
+                            System.debug(' - Send email succeess.');
+                        }  else {
+                            // Operation failed, so get all errors                
+                            for(Messaging.SendEmailError err : mr.getErrors()) {
+                                System.debug('Deep - The following error has occurred.');                    
+                                System.debug('Deep - Error - ' + err.getStatusCode() + ': ' + err.getMessage());
+                                System.debug('Deep - fields that affected this error: ' + err.getFields());
+                            }
+                        }
+                    }*/
+                }
+                
+            }
+        }catch(Exception ex){
+            system.debug('Exception '+ex.getLineNumber());
+            system.debug('Exception '+ex.getMessage());
+            throw new AuraException(ex.getMessage());
+        }
+        
+    }
+}
+
+  
